@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Happy birthday — a Los Angeles food tour</title>
+  <meta name="description" content="A Saturday food tour for October 10: ten stops from Porto’s in Northridge to Scoops in Highland Park, with the dish already picked.">
+  <meta name="theme-color" content="#fbf7ef">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect fill='%23fbf7ef' width='64' height='64' rx='12'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia' font-size='28' fill='%23b43324'%3E10%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,520;1,9..144,620&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --desk: #e4d5be;
+      --paper: #fbf7ef;
+      --band: #f3e6d2;
+      --ink: #241910;
+      --muted: #6d5d4d;
+      --line: #e3d4be;
+      --chili: #b43324;
+      --chili-deep: #8a2618;
+      --leaf: #1d6842;
+      --gold: #8a5a2b;
+      --pad: 1.25rem;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(900px 420px at 50% -80px, #f7f1e6, transparent 70%),
+        var(--desk);
+      font-family: Outfit, "Avenir Next", "Segoe UI", sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.5;
+      text-rendering: optimizeLegibility;
+    }
+
+    .sheet {
+      max-width: 42rem;
+      margin: 1.25rem auto 2.5rem;
+      background: var(--paper);
+      border-radius: 2px;
+      box-shadow: 0 24px 60px rgba(70, 42, 16, 0.14);
+      overflow: clip;
+    }
+
+    .bar {
+      position: sticky;
+      top: 0;
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.7rem var(--pad);
+      background: rgba(251, 247, 239, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .bar-title {
+      margin: 0;
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 520;
+      font-style: italic;
+      font-size: 1.05rem;
+    }
+
+    .bar-meta {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .bar-meta strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    a { color: inherit; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 2.6rem;
+      padding: 0.45rem 0.95rem;
+      border-radius: 999px;
+      background: var(--chili);
+      color: #fffaf6;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.01em;
+    }
+
+    .btn:hover { background: var(--chili-deep); }
+
+    .btn.secondary {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--ink);
+    }
+
+    .btn.secondary:hover { background: var(--ink); color: var(--paper); }
+
+    .hero {
+      padding: 1.6rem var(--pad) 1.35rem;
+    }
+
+    .eyebrow {
+      margin: 0;
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0.35rem 0 0.9rem;
+      font-family: Fraunces, "Iowan Old Style", Palatino, Georgia, serif;
+      font-weight: 520;
+      font-style: italic;
+      font-size: clamp(3.3rem, 13vw, 5.5rem);
+      line-height: 0.9;
+      letter-spacing: -0.035em;
+      text-wrap: balance;
+    }
+
+    .lede {
+      margin: 0;
+      max-width: 36rem;
+      font-size: 1.12rem;
+      text-wrap: pretty;
+    }
+
+    .trail {
+      margin: 1.1rem 0 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.65;
+    }
+
+    .hop {
+      display: inline-block;
+      white-space: nowrap;
+      margin-right: 0.35rem;
+    }
+
+    .hop span {
+      color: var(--gold);
+      padding-left: 0.28rem;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.6rem;
+      margin: 1.25rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .stats li {
+      padding-top: 0.7rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .stats strong {
+      display: block;
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 560;
+      font-size: 1.45rem;
+      letter-spacing: -0.03em;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .stats span {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.25rem;
+    }
+
+    .clock {
+      margin-top: 1.4rem;
+      padding: 1.15rem var(--pad) 1.2rem;
+      background: var(--band);
+    }
+
+    .clock h2,
+    .finale h2 {
+      margin: 0 0 0.35rem;
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 560;
+      font-size: 1.55rem;
+      letter-spacing: -0.03em;
+    }
+
+    .clock p,
+    .finale p { margin: 0; }
+
+    .deadlines {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin: 0.85rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .deadlines li {
+      padding: 0.28rem 0.65rem;
+      border-radius: 999px;
+      background: var(--paper);
+      font-size: 0.88rem;
+    }
+
+    .stops {
+      list-style: none;
+      margin: 0;
+      padding: 0.4rem var(--pad) 0.2rem;
+    }
+
+    .stop {
+      display: grid;
+      grid-template-columns: 3rem 1fr;
+      column-gap: 0.95rem;
+      position: relative;
+      padding: 1.45rem 0 1.5rem;
+      scroll-margin-top: 4.25rem;
+    }
+
+    .stop::before {
+      content: "";
+      position: absolute;
+      left: 1.35rem;
+      top: 4.15rem;
+      bottom: 0;
+      width: 1px;
+      background: #e4d5bf;
+    }
+
+    .stop:last-child::before { display: none; }
+
+    .mark {
+      position: relative;
+      width: 2.75rem;
+      height: 2.75rem;
+      margin-top: 0.1rem;
+    }
+
+    .mark input {
+      position: absolute;
+      inset: 0;
+      margin: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .box {
+      width: 2.75rem;
+      height: 2.75rem;
+      display: grid;
+      place-items: center;
+      border: 1.5px solid var(--ink);
+      border-radius: 50%;
+      background: var(--paper);
+      position: relative;
+      z-index: 1;
+    }
+
+    .num {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 560;
+      font-size: 0.95rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .mark input:focus-visible + .box {
+      outline: 2px solid var(--chili);
+      outline-offset: 3px;
+    }
+
+    .mark input:checked + .box {
+      background: var(--leaf);
+      border-color: var(--leaf);
+      color: white;
+    }
+
+    .mark input:checked + .box .num { visibility: hidden; }
+
+    .mark input:checked + .box::after {
+      content: "";
+      position: absolute;
+      width: 0.38rem;
+      height: 0.7rem;
+      border-right: 2px solid white;
+      border-bottom: 2px solid white;
+      transform: rotate(40deg) translate(-1px, -2px);
+    }
+
+    .is-next .box {
+      border-color: var(--chili);
+      color: var(--chili);
+      box-shadow: 0 0 0 4px rgba(180, 51, 36, 0.12);
+    }
+
+    .where {
+      margin: 0;
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .nextflag {
+      display: none;
+      margin-right: 0.45rem;
+      padding: 0.1rem 0.42rem 0.14rem;
+      border-radius: 999px;
+      background: var(--chili);
+      color: #fffaf6;
+      letter-spacing: 0.08em;
+      vertical-align: 1px;
+    }
+
+    .is-next .nextflag { display: inline; }
+
+    .stop h2 {
+      margin: 0.12rem 0 0.15rem;
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 560;
+      font-size: clamp(1.45rem, 4vw, 1.85rem);
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+    }
+
+    .place {
+      margin: 0 0 0.85rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .kicker {
+      margin: 0 0 0.15rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .dish {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      column-gap: 1rem;
+      align-items: baseline;
+      margin: 0;
+      font-family: Fraunces, Georgia, serif;
+      font-style: italic;
+      font-weight: 520;
+      font-size: clamp(1.35rem, 4vw, 1.7rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .dish + .dish { margin-top: 0.2rem; }
+
+    .dish span {
+      font-family: Outfit, "Avenir Next", sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0;
+      color: var(--chili-deep);
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .note {
+      margin: 0.7rem 0 0;
+      text-wrap: pretty;
+    }
+
+    .hours {
+      display: inline-block;
+      margin: 0.8rem 0 0;
+      padding: 0.18rem 0.6rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .hours.tight {
+      border-color: #e4b2a8;
+      color: var(--chili-deep);
+      background: #fff6f3;
+    }
+
+    address {
+      margin: 0.55rem 0 0;
+      font-style: normal;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.8rem;
+    }
+
+    .links a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.4rem;
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid var(--ink);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .links a:hover { background: var(--ink); color: var(--paper); }
+
+    .finale {
+      margin: 0.4rem var(--pad) 0;
+      padding: 1.1rem 1rem;
+      background: #f8efe4;
+      border-radius: 12px;
+    }
+
+    footer {
+      padding: 1.3rem var(--pad) 1.6rem;
+    }
+
+    footer p { margin: 0.45rem 0 0; color: var(--muted); font-size: 0.92rem; }
+
+    footer .signoff {
+      margin: 0 0 0.8rem;
+      color: var(--ink);
+      font-family: Fraunces, Georgia, serif;
+      font-style: italic;
+      font-size: 1.35rem;
+    }
+
+    .ghost {
+      margin-top: 0.9rem;
+      padding: 0;
+      border: 0;
+      background: none;
+      color: var(--muted);
+      font: inherit;
+      font-size: 0.88rem;
+      text-decoration: underline;
+      text-underline-offset: 0.18em;
+      cursor: pointer;
+    }
+
+    .ghost:hover { color: var(--ink); }
+
+    .route-url {
+      margin-top: 0.8rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .route-url a { color: var(--chili-deep); }
+
+    :focus-visible {
+      outline: 2px solid var(--chili);
+      outline-offset: 3px;
+    }
+
+    @media (min-width: 720px) {
+      :root { --pad: 2.4rem; }
+      .sheet { margin: 2rem auto 3rem; }
+      .hero { padding-top: 2.1rem; }
+      .stop { grid-template-columns: 3.25rem 1fr; column-gap: 1.15rem; }
+    }
+
+    @media (max-width: 640px) {
+      body { background: var(--paper); }
+      .sheet {
+        margin: 0;
+        box-shadow: none;
+        min-height: 100vh;
+      }
+      .bar-title { display: none; }
+      .bar-meta,
+      .bar .btn { white-space: nowrap; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .box, .stop, .btn, .links a { transition: none; }
+    }
+
+    @media print {
+      body { background: white; }
+      .sheet { margin: 0; box-shadow: none; }
+      .bar, .actions, .links, .ghost { display: none; }
+      .stop { break-inside: avoid; opacity: 1; }
+      .is-done { opacity: 1; }
+      a { text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <div class="bar">
+      <p class="bar-title">Happy birthday my Love! ❤️🐢</p>
+      <p class="bar-meta"><strong id="count">0</strong> of 10 tasted</p>
+      <a class="btn" href="https://maps.app.goo.gl/MMvbLhv1mdwotbVq5" target="_blank" rel="noopener">Open the route</a>
+    </div>
+
+    <header class="hero">
+      <p class="eyebrow">Saturday, October 10</p>
+      <h1>Happy birthday.</h1>
+      <p class="lede">Ten places, in driving order, from Northridge to Highland Park. A pastry, a slice of cake, a bowl of noodles, and then the rest of the city. The dishes are already picked.</p>
+      <p class="trail">
+        <span class="hop">Northridge <span aria-hidden="true">→</span></span>
+        <span class="hop">Atwater Village <span aria-hidden="true">→</span></span>
+        <span class="hop">Arcadia <span aria-hidden="true">→</span></span>
+        <span class="hop">Monterey Park <span aria-hidden="true">→</span></span>
+        <span class="hop">Boyle Heights <span aria-hidden="true">→</span></span>
+        <span class="hop">South L.A. <span aria-hidden="true">→</span></span>
+        <span class="hop">Crenshaw <span aria-hidden="true">→</span></span>
+        <span class="hop">Koreatown <span aria-hidden="true">→</span></span>
+        <span class="hop">Echo Park <span aria-hidden="true">→</span></span>
+        <span class="hop">Highland Park</span>
+      </p>
+      <ul class="stats">
+        <li><strong>10</strong><span>stops</span></li>
+        <li><strong>71</strong><span>miles</span></li>
+        <li><strong>2 hr</strong><span>of driving</span></li>
+      </ul>
+      <div class="actions">
+        <a class="btn" href="https://maps.app.goo.gl/MMvbLhv1mdwotbVq5" target="_blank" rel="noopener">Open the saved route</a>
+        <a class="btn secondary" href="#portos">Start at Porto’s</a>
+      </div>
+    </header>
+
+    <section class="clock" aria-labelledby="clock-title">
+      <h2 id="clock-title">Cake and noodles before 3</h2>
+      <p>Proof closes at 3 on Saturday. Lao Xi’s listed Saturday hours end at 3. Jim’s stays open until 5. Start with the bakeries, eat the noodles at lunch, and leave Scoops for the end. They open at 1:30.</p>
+      <ul class="deadlines">
+        <li>Proof · closes 3pm</li>
+        <li>Lao Xi · listed until 3pm</li>
+        <li>Jim’s · closes 5pm</li>
+        <li>Scoops · opens 1:30pm</li>
+      </ul>
+    </section>
+
+    <form id="tour" autocomplete="off">
+      <ol class="stops">
+        <li class="stop" id="portos">
+          <label class="mark">
+            <input type="checkbox" data-id="portos" aria-label="Porto’s, tasted">
+            <span class="box"><span class="num">01</span></span>
+          </label>
+          <article>
+            <p class="where"><span class="nextflag">Next</span>Northridge</p>
+            <h2>Porto’s Bakery and Cafe</h2>
+            <p class="place">Cuban bakery. Open early.</p>
+            <p class="kicker">Order</p>
+            <p class="dish">Potato balls and cheese rolls <span>$1.55 each</span></p>
+            <p class="note">One of each to start the day. Then get in the car.</p>
+            <p class="hours">Sat 6:30am – 8:30pm</p>
+            <address>19467 Nordhoff St, Northridge, CA 91324</address>
+            <div class="links">
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Porto's%20Bakery%20and%20Cafe%2C%2019467%20Nordhoff%20St%2C%20Northridge%2C%20CA%2091324&travelmode=driving" target="_blank" rel="noopener">Directions</a>
+              <a href="tel:+18185345210">Call</a>
+            </div>
+          </article>
+        </li>
+
+        <li class="stop" id="proof">
+          <label class="mark">
+            <input type="checkbox" data-id="proof" aria-label="Proof Bakery, tasted">
+            <span class="box"><span class="num">02</span></span>
+          </label>
+          <article>
+            <p class="where"><span class="nextflag">Next</span>Atwater Village</p>
+            <h2>Proof Bakery</h2>
+            <p class="place">The cake stop. Saturday hours end at 3.</p>
+            <p class="kicker">Order</p>
+            <p class="dish">Chocolate caramel espresso cake <span>$7–8</span></p>
+            <p class="note">Get here while the case is still full. This is the one that can close on us.</p>
+            <p class="hours tight">Sat 8am – 3pm</p>
+            <address>3156 Glendale Blvd, Los Angeles, CA 90039</address>
+            <div class="links">
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Proof%20Bakery%2C%203156%20Glendale%20Blvd%2C%20Los%20Angeles%2C%20CA%2090039&travelmode=driving" target="_blank" rel="noopener">Directions</a>
+              <a href="tel:+13236648633">Call</a>
+            </div>
+          </article>
+        </li>
+
+        <li class="stop" id="laoxi">
+          <label class="mark">
+            <input type="checkbox" data-id="laoxi" aria-label="LaoXi Noodle House, tasted">
+            <span class="box"><span class="num">03</span></span>
+          </label>
+          <article>
+            <p class="where"><span class="nextflag">Next</span>Arcadia</p>
+            <h2>LaoXi Noodle House</h2>
+            <p class="place">Lunch in the San Gabriel Valley.</p>
+            <p class="kicker">Order</p>
+            <p class="dish">Wife’s special noodles <span>$19</span></p>
+            <p class="note">It is your birthday, and this one is already on the menu. Saturday is listed as lunch only.</p>
+            <p class="hours tight">Sat 11am – 3pm</p>
+            <address>600 E Live Oak Ave, Arcadia, CA 91006</address>
+            <div class="links">
+              <a href="https://www.google.com/maps/dir/?api=1&destination=LaoXi%20Noodle%20House%2C%20600%20E%20Live%20Oak%20Ave%2C%20Arcadia%2C%20CA%2091006&travelmode=driving" target="_blank" rel="noopener">Directions</a>
+            </div>
+          </article>
+        </li>
+
+        <li class="stop" id="jims">
+          <label class="mark">
+            <input type="checkbox" data-id="jims" aria-label="Jim’s Bakery, tasted">
+            <span class="box"><span class="num">04</span></span>
+          </label>
+          <article>
+            <p class="where"><span class="nextflag">Next</span>Monterey Park</p>
+            <h2>Jim’s Bakery</h2>
+            <p class="place">Hong Kong bakery. Egg tarts are the house specialty, and po tarts are the custardy ones.</p>
+            <p class="kicker">Order</p>
+            <p class="dish">Egg tarts and po tarts <span>$2–4</span></p>
+            <p class="note">A box for the car. They close at 5.</p>
+            <p class="hours">Sat 8am – 5pm</p>
+            <address>400 S Atlantic Blvd #200, Monterey Park, CA 91754</address>
+            <div class="links">
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Jim's%20Bakery%2C%20400%20S%20Atlantic%20Blvd%20%23200%2C%20Monterey%20Park%2C%20CA%2091754&travelmode=driving" target="_blank" rel="noopener">Directions</a>
+              <a href="tel:+16265735757">Call</a>
+            </div>
+          </article>
+        </li>
+
+        <li class="stop" id="georges">
+          <label class="mark">
+            <input type="checkbox" data-id="georges" aria-label="George’s Burger Stand, tasted">
+            <span class="box"><span class="num">05</span></span>
+          </label>
+          <article>
+            <p class="where"><span class="nextflag">Next</span>Boyle Heights</p>
+            <h2>George’s Burger Stand</h2>
+            <p class="place">The old stand on Cesar Chavez.</p>
+            <p class="kicker">Order</p>
+            <p class="dish">Onion rings <span>$7.99</span></p>
+            <p class="dish">Pastrami burger <span>$12.99</span></p>
+            <p class="note">Sit down for this one.</p>
+            <p class="hours">Sat 9am – 9pm</p>
+            <address>2311 E Cesar E Chavez Ave, Los Angeles, CA 90033</address>
+            <div class="links">
+              <a href="https://www.google.com/maps/dir/?api=1&destination=George's%20Burger%20Stand%2C%202311%20E%20Cesar%20E%20Chavez%20Ave%2C%20Los%20Angeles%2C%20CA%2090033&travelmode=driving" target="_blank" rel="noopener">Directions</a>
+              <a href="tel:+13232683965">Call</a>
+            </div>
+          </article>
+        </li>
+
+        <li class="stop" id="holbox">
+          <label class="mark">
+            <input type="checkbox" data-id="holbox" aria-label="Holbox, tasted">
+            <span class="box"><span class="num">06</span></span>
+          </label>
+          <article>
+            <p class="where"><span class="nextflag">Next</span>South L.A.</p>
+            <h2>Holbox</h2>
+            <p class="place">Inside Mercado La Paloma. Order at the counter.</p>
+            <p class="kicker">Order</p>
+            <p class="dish">Fish tacos <span>$6–8</span></p>
+            <p class="note">Order at the stall, then find a table in the market.</p>
+            <p class="hours">Sat 11:30am – 10pm</p>
+            <address>3655 S Grand Ave C9, Los Angeles, CA 90007</address>
+            <div class="links">
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Holbox%2C%203655%20S%20Grand%20Ave%20C9%2C%20Los%20Angeles%2C%20CA%2090007&travelmode=driving" target="_blank" rel="noopener">Directions</a>
+              <a href="tel:+12139869972">Call</a>
+            </div>
+          </article>
+        </li>
+
+        <li class="stop" id="marilyns">
+          <label class="mark">
+            <input type="checkbox" data-id="marilyns" aria-label="Chef Marilyn’s, tasted">
+            <span class="box"><span class="num">07</span></span>
+          </label>
+          <article>
+            <p class="where"><span class="nextflag">Next</span>Crenshaw</p>
+            <h2>Chef Marilyn’s</h2>
+            <p class="place">Soul food. Takeout only, from the pans.</p>
+            <p class="kicker">Order</p>
+            <p class="dish">Whatever looks right</p>
+            <p class="note">Your pick. Carryout runs until 6:30, and the doors are listed until 7.</p>
+            <p class="hours">Sat 11am – 7pm</p>
+            <address>2638 Crenshaw Blvd, Los Angeles, CA 90016</address>
+            <div class="links">
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Chef%20Marilyn's%2C%202638%20Crenshaw%20Blvd%2C%20Los%20Angeles%2C%20CA%2090016&travelmode=driving" target="_blank" rel="noopener">Directions</a>
+              <a href="tel:+13237378101">Call</a>
+            </div>
+          </article>
+        </li>
+
+        <li class="stop" id="hanbat">
+          <label class="mark">
+            <input type="checkbox" data-id="hanbat" aria-label="Han Bat Sul Lung Tang, tasted">
+            <span class="box"><span class="num">08</span></span>
+          </label>
+          <article>
+            <p class="where"><span class="nextflag">Next</span>Koreatown</p>
+            <h2>Han Bat Sul Lung Tang</h2>
+            <p class="place">A bowl of soup, on purpose. Two stops still after this.</p>
+            <p class="kicker">Order</p>
+            <p class="dish">Ox bone soup <span>$13.50</span></p>
+            <p class="note">One bowl. Leave a little room for Echo Park and ice cream.</p>
+            <p class="hours">Sat 7am – 9pm</p>
+            <address>4163 W 5th St, Los Angeles, CA 90020</address>
+            <div class="links">
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Han%20Bat%20Sul%20Lung%20Tang%2C%204163%20W%205th%20St%2C%20Los%20Angeles%2C%20CA%2090020&travelmode=driving" target="_blank" rel="noopener">Directions</a>
+              <a href="tel:+12133839499">Call</a>
+            </div>
+          </article>
+        </li>
+
+        <li class="stop" id="comboa">
+          <label class="mark">
+            <input type="checkbox" data-id="comboa" aria-label="Combo A, tasted">
+            <span class="box"><span class="num">09</span></span>
+          </label>
+          <article>
+            <p class="where"><span class="nextflag">Next</span>Echo Park</p>
+            <h2>Combo A</h2>
+            <p class="place">Suite 101, entrance on Echo Park Ave.</p>
+            <p class="kicker">Order</p>
+            <p class="dish">Fried rice with chicken wings <span>$8.99</span></p>
+            <p class="note">Then we point the car at York Blvd.</p>
+            <p class="hours">Sat 11am – 8:30pm</p>
+            <address>1411 Echo Park Ave #101, Los Angeles, CA 90026</address>
+            <div class="links">
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Combo%20A%2C%201411%20Echo%20Park%20Ave%2C%20Los%20Angeles%2C%20CA%2090026&travelmode=driving" target="_blank" rel="noopener">Directions</a>
+              <a href="tel:+12139287495">Call</a>
+            </div>
+          </article>
+        </li>
+
+        <li class="stop" id="scoops">
+          <label class="mark">
+            <input type="checkbox" data-id="scoops" aria-label="Scoops, tasted">
+            <span class="box"><span class="num">10</span></span>
+          </label>
+          <article>
+            <p class="where"><span class="nextflag">Next</span>Highland Park</p>
+            <h2>Scoops</h2>
+            <p class="place">Ice cream to end the day. The board changes.</p>
+            <p class="kicker">Order</p>
+            <p class="dish">Ice cream</p>
+            <p class="note">Last stop. Ask what they made today.</p>
+            <p class="hours">Sat 1:30pm – 9pm</p>
+            <address>5105 York Blvd, Los Angeles, CA 90042</address>
+            <div class="links">
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Scoops%2C%205105%20York%20Blvd%2C%20Los%20Angeles%2C%20CA%2090042&travelmode=driving" target="_blank" rel="noopener">Directions</a>
+            </div>
+          </article>
+        </li>
+      </ol>
+    </form>
+
+    <section class="finale" id="finale" hidden>
+      <h2>That’s the whole day.</h2>
+      <p>Happy birthday.</p>
+    </section>
+
+    <footer>
+      <p class="signoff">Happy birthday my Love! ❤️🐢</p>
+      <p>The saved route runs about 71 miles. A little over two hours of driving before anyone orders, depending on traffic.</p>
+      <p>Hours are the Saturday hours each place had listed. If a door says otherwise, trust the door.</p>
+      <p class="route-url"><a href="https://maps.app.goo.gl/MMvbLhv1mdwotbVq5" target="_blank" rel="noopener">maps.app.goo.gl/MMvbLhv1mdwotbVq5</a></p>
+      <button type="button" class="ghost" id="reset">Clear the checkmarks</button>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var KEY = "birthday-tour-2026-10-10";
+      var form = document.getElementById("tour");
+      var boxes = Array.prototype.slice.call(form.querySelectorAll("input[type=checkbox]"));
+      var countEl = document.getElementById("count");
+      var finale = document.getElementById("finale");
+      var reset = document.getElementById("reset");
+
+      function read() {
+        try {
+          var raw = localStorage.getItem(KEY);
+          return raw ? JSON.parse(raw) : {};
+        } catch (e) {
+          return {};
+        }
+      }
+
+      function write(state) {
+        try {
+          localStorage.setItem(KEY, JSON.stringify(state));
+        } catch (e) {}
+      }
+
+      function paint() {
+        var nextSet = false;
+        var n = 0;
+        boxes.forEach(function (box) {
+          var stop = box.closest(".stop");
+          var on = box.checked;
+          stop.classList.toggle("is-done", on);
+          var isNext = !on && !nextSet;
+          if (isNext) nextSet = true;
+          stop.classList.toggle("is-next", isNext);
+          if (on) n += 1;
+        });
+        countEl.textContent = String(n);
+        finale.hidden = n !== boxes.length;
+      }
+
+      var saved = read();
+      boxes.forEach(function (box) {
+        if (saved[box.dataset.id]) box.checked = true;
+        box.addEventListener("change", function () {
+          var state = read();
+          if (box.checked) state[box.dataset.id] = true;
+          else delete state[box.dataset.id];
+          write(state);
+          paint();
+        });
+      });
+
+      reset.addEventListener("click", function () {
+        boxes.forEach(function (box) { box.checked = false; });
+        write({});
+        paint();
+      });
+
+      form.addEventListener("submit", function (e) { e.preventDefault(); });
+      paint();
+    })();
+  </script>
+</body>
+</html>
